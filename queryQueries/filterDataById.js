@@ -6,14 +6,12 @@ const ddb = new AWS.DynamoDB.DocumentClient();
 // Get list of organizations with FilterExpression
 var params = {
   TableName: "organizations",
-  KeyConditionExpression: "#id = :id  OR #name = :n",
+  KeyConditionExpression: "#id = :id",
   ExpressionAttributeNames: {
     "#id": "id",
-    "#name": "name",
   },
   ExpressionAttributeValues: {
     ":id": "ORG#bee50ceb-2352-4692-b1e4-589d669e3627",
-    ":n": "panacloud",
   },
 };
 
